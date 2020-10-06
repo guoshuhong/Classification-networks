@@ -1,8 +1,8 @@
 import tensorflow as tf
-from tensorflow.keras.applications import  densenet
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+# from tensorflow.keras.applications import  densenet
+# from __future__ import absolute_import
+# from __future__ import division
+# from __future__ import print_function
 
 import os
 
@@ -14,7 +14,7 @@ from tensorflow.python.keras.utils import data_utils
 from tensorflow.python.keras.utils import layer_utils
 from tensorflow.python.util.tf_export import keras_export
 
-model = densenet.DenseNet121()
+# model = densenet.DenseNet121()
 
 
 def dense_block(x, blocks, name):
@@ -165,7 +165,8 @@ def DenseNet(
     # Determine proper input shape
     input_shape = imagenet_utils.obtain_input_shape(
         input_shape,
-        default_size=224,
+        # default 224
+        default_size=56,
         min_size=32,
         data_format=backend.image_data_format(),
         require_flatten=include_top,

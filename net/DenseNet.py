@@ -166,8 +166,9 @@ def DenseNet(
     input_shape = imagenet_utils.obtain_input_shape(
         input_shape,
         # default 224
-        default_size=56,
+        default_size=32,
         min_size=32,
+        # min_size=28,
         data_format=backend.image_data_format(),
         require_flatten=include_top,
         weights=weights)

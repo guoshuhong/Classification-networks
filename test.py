@@ -1,6 +1,6 @@
 from tensorflow.python.keras.utils.np_utils import to_categorical
 
-from net import  DenseNet
+from net import  efficientnet
 import tensorflow as tf
 import tensorflow.keras as keras
 import cv2
@@ -29,7 +29,7 @@ print(y)
 # x = x.reshape(-1, 28, 28, 1)
 # x_test = x_test.reshape(-1, 28, 28, 1)
 print(y.shape, y_test.shape)
-model = DenseNet.DenseNet121(weights=None, classes=10)
+model = keras.applications.densenet.DenseNet121(weights=None, classes=10, input_shape=(56, 56, 3))
 model.summary()
 optimizer = tf.keras.optimizers.Adam(0.001)
 model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])

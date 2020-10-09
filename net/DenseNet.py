@@ -8,12 +8,13 @@ import os
 
 from tensorflow.python.keras import backend
 from tensorflow.python.keras import layers
-from tensorflow.python.keras.applications import imagenet_utils
+# from tensorflow.python.keras.applications import imagenet_utils
 from tensorflow.python.keras.engine import training
 from tensorflow.python.keras.utils import data_utils
 from tensorflow.python.keras.utils import layer_utils
 from tensorflow.python.util.tf_export import keras_export
 
+from keras_applications import imagenet_utils
 # model = densenet.DenseNet121()
 
 
@@ -163,7 +164,7 @@ def DenseNet(
                          ' as true, `classes` should be 1000')
 
     # Determine proper input shape
-    input_shape = imagenet_utils.obtain_input_shape(
+    input_shape = imagenet_utils._obtain_input_shape(
         input_shape,
         # default 224
         default_size=32,
